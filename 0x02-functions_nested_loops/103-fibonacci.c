@@ -1,32 +1,26 @@
-#include "stdio.h"
+#include <stdio.h>
 
 /**
- * print_sign - Prints the sign of a number.
- * @n: The number of which the sign will be printed.
- *
- * Return: 1 if the number is greater than zero,
- *
- *         0 if the number is zero,
- *
- *         -1 if the number is less than zero.
- *
+ * main - Prints the sum of even-valued Fibonacci sequence
+ *        terms not exceeding 4000000.
+ * Return: Always 0.
  */
 
-int print_sign(int n)
+int main(void)
 {
-	if (n > 0)
+	unsigned long fib1 = 0, fib2 = 1, fibsum;
+	float tot_sum;
+
+	while (1)
 	{
-		_putchar('+');
-		return (1);
+	fibsum = fib1 + fib2;
+	if (fibsum > 4000000)
+	break;
+	if ((fibsum % 2) == 0)
+	tot_sum += fibsum;
+	fib1 = fib2;
+	fib2 = fibsum;
 	}
-	else if (n == 0)
-	{
-		_putchar('0');
-		return (0);
-	{
-	else
-	{
-		_putchar('-');
-		return (-1);
-	}
+	printf("%.0f\n", tot_sum);
+	return (0);
 }
